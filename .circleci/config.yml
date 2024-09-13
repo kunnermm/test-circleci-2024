@@ -48,3 +48,17 @@ workflows:
       - say-bye:
           requires:
             - approval
+
+  nocturno:
+    triggers:
+      - schedule:
+          cron: "12 18 * * *"
+          filters:
+            branches:
+              only:
+                - circleci-project-setup
+    jobs:
+      - say-hello
+      - say-bye:
+          requires:
+            - say-hello
