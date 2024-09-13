@@ -23,6 +23,9 @@ jobs:
           name: "Say POST Bye bye"
           command: "echo Goodbye, World!"
 
+  approval:
+    type: approval
+
 workflows:
   workflow1:
     jobs:
@@ -35,3 +38,13 @@ workflows:
       - say-bye:
           requires:
             - say-hello
+            
+  workflow3:
+    jobs:
+      - say-hello
+      - approval:
+          requires:
+            - say-hello
+      - say-bye:
+          requires:
+            - approval
