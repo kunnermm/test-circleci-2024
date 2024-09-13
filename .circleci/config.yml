@@ -52,7 +52,7 @@ workflows:
   nocturno:
     triggers:
       - schedule:
-          cron: "30 00 * * *"
+          cron: "30 08 * * *"
           filters:
             branches:
               only:
