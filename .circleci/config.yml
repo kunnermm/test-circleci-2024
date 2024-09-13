@@ -52,8 +52,7 @@ workflows:
   nocturno:
     triggers:
       - schedule:
-          cron: "16 18 * * *"
-
+          cron: "12 06 * * *"
     jobs:
       - say-hello
       - say-bye:
