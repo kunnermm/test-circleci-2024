@@ -53,10 +53,7 @@ workflows:
     triggers:
       - schedule:
           cron: "16 18 * * *"
-          filters:
-            branches:
-              only:
-                - circleci-project-setup
+
     jobs:
       - say-hello
       - say-bye:
