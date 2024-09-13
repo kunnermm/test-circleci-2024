@@ -5,27 +5,26 @@ jobs:
     docker:
       - image: cimg/base:current
     steps:
-      - checkout
       - run:
           name: "Say hello"
-   say-bye:
+          command: "echo Hello, World!"
+
+  say-bye:
     docker:
       - image: cimg/base:current
     steps:
-      - checkout
       - run:
           name: "Say PRE Bye bye"
           command: "echo Hello, World!"
-       - run:
+      - run:
           name: "Say Bye bye"
-          command: "echo Hello, World!"
-       - run:
+          command: "echo Bye, World!"
+      - run:
           name: "Say POST Bye bye"
-          command: "echo Hello, World!"
-
+          command: "echo Goodbye, World!"
 
 workflows:
-  say-hello-workflow: # This is the name of the workflow, feel free to change it to better match your workflow.
+  say-hello-workflow:
     jobs:
       - say-hello
       - say-bye
