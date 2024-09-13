@@ -24,7 +24,14 @@ jobs:
           command: "echo Goodbye, World!"
 
 workflows:
-  say-hello-workflow:
+  workflow1:
     jobs:
       - say-hello
       - say-bye
+
+  workflow2:
+    jobs:
+      - say-hello
+      - say-bye:
+          requires:
+            - say-hello
