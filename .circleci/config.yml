@@ -52,7 +52,11 @@ workflows:
   nocturno:
     triggers:
       - schedule:
-          cron: "12 06 * * *"
+          cron: "30 18 * * *"
+          filters:
+            branches:
+              only:
+                - circleci-project-setup
     jobs:
       - say-hello
       - say-bye:
